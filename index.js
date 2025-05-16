@@ -5,6 +5,7 @@ const dotenv = require('dotenv')
 const userRoutes = require('./routes/authRoutes')
 const busRoutes = require('./routes/busRoutes')
 const bookingRoutes = require('./routes/bookingRoutes')
+const serverless = reuire('serverless-http')
 
 dotenv.config()
 
@@ -21,8 +22,5 @@ app.use('/api/user', userRoutes)
 app.use('/api/bus', busRoutes)
 app.use('/api/booking', bookingRoutes)
 
-const PORT = process.env.PORT
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`)
-})
-
+module.exports = app
+module.exports.handler = serverless(app)
