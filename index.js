@@ -5,7 +5,7 @@ const dotenv = require('dotenv')
 const userRoutes = require('./routes/authRoutes')
 const busRoutes = require('./routes/busRoutes')
 const bookingRoutes = require('./routes/bookingRoutes')
-const serverless = reuire('serverless-http')
+const serverless = require('serverless-http')
 
 dotenv.config()
 
